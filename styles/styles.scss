@@ -1,0 +1,148 @@
+// ### Primary
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+$color1: hsl(0, 36%, 70%);
+$color2: hsl(0, 93%, 68%);
+$color3: hsl(0, 6%, 24%);
+
+// ### Gradients
+
+// - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+// - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+* {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  max-width: 1440px;
+  .hidden {
+    display: none;
+  }
+  .leftCol {
+    background: url(../img/bg-pattern-desktop.svg) no-repeat;
+    background-size: cover;
+    padding: 3rem 12.45rem;
+    .logo {
+      height: 32px;
+      margin-bottom: 6rem;
+    }
+    .logo-m {
+      display: none;
+    }
+    h1 {
+      text-transform: uppercase;
+      font-size: 46px;
+      color: $color3;
+      letter-spacing: 14px;
+      margin-bottom: 28px;
+    }
+    span {
+      color: $color1;
+      font-weight: 300;
+    }
+    p {
+      color: $color1;
+      font-size: 12px;
+      margin-bottom: 44px;
+      line-height: 23px;
+    }
+    .reg {
+      position: relative;
+      &__input {
+        width: 100%;
+        height: 56px;
+        padding: 20px 32px;
+        border-radius: 5rem;
+        border: 0.5px $color1 solid;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          color: $color1;
+        }
+        &.error {
+          border: 1px solid #dc3545;
+        }
+      }
+      &__btn {
+        position: absolute;
+        height: 100%;
+        width: 100px;
+        border: none;
+        border-radius: 7rem;
+        cursor: pointer;
+        transition: 0.12s;
+        right: 0;
+        box-shadow: 0px 4px 7px #ce979799;
+        background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+        &:hover {
+          opacity: 0.7;
+        }
+        &__icon {
+        }
+      }
+      .error__text {
+        position: absolute;
+        top: 0;
+        transform: translate(33px, 60px);
+        color: #dc3545;
+      }
+
+      .error__icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) translateX(-7rem);
+      }
+    }
+  }
+  .rightCol {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    position: relative;
+    .leftCol {
+      padding: 10%;
+      .logo {
+        margin-bottom: 28rem;
+      }
+      .logo-m {
+        display: block;
+        position: absolute;
+        top: 8rem;
+        left: 0;
+        width: 100%;
+      }
+    }
+    .rightCol {
+      display: none;
+    }
+  }
+}
